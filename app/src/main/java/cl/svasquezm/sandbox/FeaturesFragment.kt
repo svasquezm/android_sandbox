@@ -43,18 +43,33 @@ class FeaturesFragment : Fragment() {
 
         // Access root's Recyclerview
         _binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
-        _binding.recyclerView.adapter = FeaturesAdapter(featuresList)
+        _binding.recyclerView.adapter = FeaturesAdapter(featuresList) { itemClicked ->
+            when(itemClicked){
+                FeatureType.DATA_BINDING -> Feat
+            }
+        }
+    }
+
+    /**
+     * Feature type
+     */
+    enum class FeatureType(id: Int){
+        DATA_BINDING(0)
     }
 
     /**
      * Feature data holder class
      */
-    data class FeatureDataClass(@StringRes val featureNameRes: Int, @StringRes val featureDescriptionRes: Int)
+    data class FeatureDataClass(@StringRes val featureNameRes: Int,
+                                @StringRes val featureDescriptionRes: Int,
+                                val featureType: FeatureType)
 
     /**
      * Adapter which shows
      */
-    inner class FeaturesAdapter(private val features: List<FeatureDataClass>) : RecyclerView.Adapter<FeatureViewHolder>(){
+    inner class FeaturesAdapter(private val features: List<FeatureDataClass>,
+                                private val onFeatureClicked: (FeatureType) -> Unit) : RecyclerView.Adapter<FeatureViewHolder>(){
+
         override fun getItemCount() = features.size
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeatureViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_item_feature, parent, false)
@@ -69,9 +84,13 @@ class FeaturesFragment : Fragment() {
         private val title = view.findViewById<TextView>(R.id.title)
         private val description = view.findViewById<TextView>(R.id.description)
 
-        fun bind(item: FeatureDataClass){
+        fun bind(item: FeatureDataClass, onFeatureClicked: (FeatureType) -> Unit){
             title.text = itemView.context.getString(item.featureNameRes)
             description.text = itemView.context.getString(item.featureDescriptionRes)
+
+            itemView.setOnClickListener {
+                onFeatureClicked(item.featureType)
+            }
         }
     }
 }

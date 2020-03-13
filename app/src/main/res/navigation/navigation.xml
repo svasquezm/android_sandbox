@@ -9,6 +9,15 @@
         android:id="@+id/featuresFragment"
         android:name="cl.svasquezm.sandbox.FeaturesFragment"
         android:label="fragment_features"
-        tools:layout="@layout/fragment_data_binding" />
+        tools:layout="@layout/fragment_features" >
+        <action
+            android:id="@+id/action_featuresFragment_to_dataBindingFragment"
+            app:destination="@id/dataBindingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataBindingFragment"
+        android:name="cl.svasquezm.sandbox.features.databinding.DataBindingFragment"
+        android:label="DataBindingFragment" />
 
 </navigation>
