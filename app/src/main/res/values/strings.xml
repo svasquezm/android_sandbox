@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sandbox</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="below_text_is_set_using_data_binding_component">Below text is set using data binding component</string>
+    <string name="feature_data_binding">Data and View Bindings</string>
+    <string name="feature_data_binding_explanation">Data binding and View binding components demonstration</string>
+</resources>

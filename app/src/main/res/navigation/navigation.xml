@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/featuresFragment">
+
+    <fragment
+        android:id="@+id/featuresFragment"
+        android:name="cl.svasquezm.sandbox.FeaturesFragment"
+        android:label="fragment_features"
+        tools:layout="@layout/fragment_data_binding" />
+
+</navigation>
