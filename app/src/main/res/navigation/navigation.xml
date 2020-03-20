@@ -13,11 +13,18 @@
         <action
             android:id="@+id/action_featuresFragment_to_dataBindingFragment"
             app:destination="@id/dataBindingFragment" />
+        <action
+            android:id="@+id/action_featuresFragment_to_coordinatorLayout1Fragment"
+            app:destination="@id/coordinatorLayout1Fragment" />
     </fragment>
 
     <fragment
         android:id="@+id/dataBindingFragment"
         android:name="cl.svasquezm.sandbox.features.databinding.DataBindingFragment"
         android:label="DataBindingFragment" />
+    <fragment
+        android:id="@+id/coordinatorLayout1Fragment"
+        android:name="cl.svasquezm.sandbox.ui.layouts.CoordinatorLayout1Fragment"
+        android:label="CoordinatorLayout1Fragment" />
 
 </navigation>

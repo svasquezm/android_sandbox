@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cl.svasquezm.sandbox.databinding.FragmentFeaturesBinding
@@ -38,14 +39,20 @@ class FeaturesFragment : Fragment() {
 
         // Create Features List
         val featuresList = listOf(
-            FeatureDataClass(R.string.feature_data_binding, R.string.feature_data_binding_explanation)
+            FeatureDataClass(R.string.feature_data_binding,
+                R.string.feature_data_binding_explanation,
+                FeatureType.DATA_BINDING),
+            FeatureDataClass(R.string.feature_ui,
+                R.string.feature_ui_explanation,
+                FeatureType.UI)
         )
 
         // Access root's Recyclerview
         _binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
         _binding.recyclerView.adapter = FeaturesAdapter(featuresList) { itemClicked ->
             when(itemClicked){
-                FeatureType.DATA_BINDING -> Feat
+                FeatureType.DATA_BINDING -> findNavController().navigate(R.id.action_featuresFragment_to_dataBindingFragment)
+                FeatureType.UI -> findNavController().navigate(R.id.action_featuresFragment_to_coordinatorLayout1Fragment)
             }
         }
     }
@@ -54,7 +61,8 @@ class FeaturesFragment : Fragment() {
      * Feature type
      */
     enum class FeatureType(id: Int){
-        DATA_BINDING(0)
+        DATA_BINDING(0),
+        UI(1)
     }
 
     /**
@@ -77,7 +85,7 @@ class FeaturesFragment : Fragment() {
         }
 
         override fun onBindViewHolder(holder: FeatureViewHolder, position: Int)
-                = holder.bind(features[position])
+                = holder.bind(features[position], onFeatureClicked)
     }
 
     inner class FeatureViewHolder(view: View) : RecyclerView.ViewHolder(view){

@@ -6,4 +6,7 @@
     <string name="below_text_is_set_using_data_binding_component">Below text is set using data binding component</string>
     <string name="feature_data_binding">Data and View Bindings</string>
     <string name="feature_data_binding_explanation">Data binding and View binding components demonstration</string>
+    <string name="also_you_can_work_with_observable_values">Also you can work with Observable values</string>
+    <string name="feature_ui">UI Features</string>
+    <string name="feature_ui_explanation">Coordinator Layout, Constrait layout and more</string>
 </resources>

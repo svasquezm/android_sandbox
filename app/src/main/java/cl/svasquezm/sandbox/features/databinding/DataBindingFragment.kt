@@ -14,6 +14,7 @@ import cl.svasquezm.sandbox.databinding.FragmentDataBindingBinding
  * }
  */
 class DataBindingFragment : Fragment() {
+    private val dataUser = DataClassBinding("Sebastián", "Vásquez")
     lateinit var viewBinding: FragmentDataBindingBinding
 
     override fun onCreateView(
@@ -27,7 +28,7 @@ class DataBindingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding.user = DataClassBinding("Sebastián", "Vásquez")
+        viewBinding.user = dataUser
     }
 
     /**
