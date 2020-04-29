@@ -1,4 +1,4 @@
-package cl.svasquezm.sandbox.ui.layouts
+package cl.svasquezm.sandbox.features.layouts
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -9,4 +9,8 @@
     <string name="also_you_can_work_with_observable_values">Also you can work with Observable values</string>
     <string name="feature_ui">UI Features</string>
     <string name="feature_ui_explanation">Coordinator Layout, Constrait layout and more</string>
+    <string name="feature_ui_constraint1">Complex ConstraintLayout</string>
+    <string name="feature_ui_motion">Motion Layout</string>
+    <string name="feature_ui_constraint1_explanation">Simple animation using a RecyclerView and a selected item</string>
+    <string name="feature_ui_motion_explanation">Complex animation using a MotionLayout</string>
 </resources>

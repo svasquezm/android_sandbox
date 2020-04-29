@@ -1,0 +1,7 @@
+{
+  "client_id" : "<CLIEND_ID>",
+  "account_mode" : "SINGLE",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "msauth://cl.svasquezm.sandbox/SnPlvpq91tJsI0Xn%2FGet47YD1dY%3D",
+  "authorities" : []
+}

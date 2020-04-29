@@ -1,4 +1,4 @@
-package cl.svasquezm.sandbox
+package cl.svasquezm.sandbox.features
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cl.svasquezm.sandbox.R
 import cl.svasquezm.sandbox.databinding.FragmentFeaturesBinding
 
 /**
@@ -39,20 +40,46 @@ class FeaturesFragment : Fragment() {
 
         // Create Features List
         val featuresList = listOf(
-            FeatureDataClass(R.string.feature_data_binding,
+            FeatureDataClass(
+                R.string.feature_data_binding,
                 R.string.feature_data_binding_explanation,
-                FeatureType.DATA_BINDING),
-            FeatureDataClass(R.string.feature_ui,
+                FeatureType.DATA_BINDING
+            ),
+            FeatureDataClass(
+                R.string.feature_ui,
                 R.string.feature_ui_explanation,
-                FeatureType.UI)
+                FeatureType.UI
+            ),
+            FeatureDataClass(
+                R.string.feature_ui_constraint1,
+                R.string.feature_ui_constraint1_explanation,
+                FeatureType.UI_CONSTRAINT1
+            ),
+            FeatureDataClass(
+                R.string.feature_ui_motion,
+                R.string.feature_ui_motion_explanation,
+                FeatureType.UI_MOTION
+            )
         )
 
         // Access root's Recyclerview
         _binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
         _binding.recyclerView.adapter = FeaturesAdapter(featuresList) { itemClicked ->
-            when(itemClicked){
-                FeatureType.DATA_BINDING -> findNavController().navigate(R.id.action_featuresFragment_to_dataBindingFragment)
-                FeatureType.UI -> findNavController().navigate(R.id.action_featuresFragment_to_coordinatorLayout1Fragment)
+            findNavController().run {
+                when(itemClicked){
+                    FeatureType.DATA_BINDING -> navigate(
+                        R.id.action_featuresFragment_to_dataBindingFragment
+                    )
+                    FeatureType.UI -> navigate(
+                        R.id.action_featuresFragment_to_coordinatorLayout1Fragment
+                    )
+                    FeatureType.UI_CONSTRAINT1 -> navigate(
+                        R.id.action_featuresFragment_to_constraintLayoutAnimation1Fragment
+                    )
+                    FeatureType.UI_MOTION -> navigate(
+                        R.id.action_featuresFragment_to_motionLayoutFragment
+                    )
+                }
             }
         }
     }
@@ -62,7 +89,9 @@ class FeaturesFragment : Fragment() {
      */
     enum class FeatureType(id: Int){
         DATA_BINDING(0),
-        UI(1)
+        UI(1),
+        UI_CONSTRAINT1(2),
+        UI_MOTION(3)
     }
 
     /**
@@ -70,7 +99,8 @@ class FeaturesFragment : Fragment() {
      */
     data class FeatureDataClass(@StringRes val featureNameRes: Int,
                                 @StringRes val featureDescriptionRes: Int,
-                                val featureType: FeatureType)
+                                val featureType: FeatureType
+    )
 
     /**
      * Adapter which shows
