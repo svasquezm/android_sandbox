@@ -1,4 +1,4 @@
-package cl.svasquezm.sandbox.features.layouts
+package cl.svasquezm.sandbox.features.layouts.motion
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import cl.svasquezm.sandbox.R
 /**
  * A simple [Fragment] subclass.
  */
-class MotionLayoutFragment2 : Fragment() {
+class MotionLayoutSwipeFragment : Fragment() {
 
     private val recyclerView by lazy { view!!.findViewById<RecyclerView>(R.id.recyclerView) }
 

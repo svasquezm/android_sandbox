@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/roomFragment">
+    app:startDestination="@id/featuresFragment">
 
     <fragment
         android:id="@+id/featuresFragment"
@@ -11,62 +11,21 @@
         android:label="fragment_features"
         tools:layout="@layout/fragment_features" >
         <action
-            android:id="@+id/action_featuresFragment_to_dataBindingFragment"
-            app:destination="@id/dataBindingFragment" />
-        <action
-            android:id="@+id/action_featuresFragment_to_coordinatorLayout1Fragment"
-            app:destination="@id/coordinatorLayout1Fragment" />
-        <action
-            android:id="@+id/action_featuresFragment_to_constraintLayoutAnimation1Fragment"
-            app:destination="@id/constraintLayoutAnimation1Fragment" />
-        <action
-            android:id="@+id/action_featuresFragment_to_motionLayoutFragment"
-            app:destination="@id/motionLayoutFragment" />
-        <action
-            android:id="@+id/action_featuresFragment_to_motionLayoutFragment2"
-            app:destination="@id/motionLayoutFragment2" />
-        <action
-            android:id="@+id/action_featuresFragment_to_MSLoginFragment"
-            app:destination="@id/MSLoginFragment" />
-        <action
-            android:id="@+id/action_featuresFragment_to_coroutinesFragment"
-            app:destination="@id/coroutinesFragment" />
-        <action
-            android:id="@+id/action_featuresFragment_to_roomFragment"
-            app:destination="@id/roomFragment" />
+            android:id="@+id/action_featuresFragment_to_motionLayoutFeaturesFragment"
+            app:destination="@id/motionLayoutFeaturesFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/dataBindingFragment"
-        android:name="cl.svasquezm.sandbox.features.databinding.DataBindingFragment"
-        android:label="DataBindingFragment" />
-    <fragment
-        android:id="@+id/coordinatorLayout1Fragment"
-        android:name="cl.svasquezm.sandbox.features.layouts.CoordinatorLayout1Fragment"
-        android:label="CoordinatorLayout1Fragment" />
-    <fragment
-        android:id="@+id/constraintLayoutAnimation1Fragment"
-        android:name="cl.svasquezm.sandbox.features.layouts.ConstraintLayoutAnimation1Fragment"
-        android:label="ConstraintLayoutAnimation1Fragment" />
-    <fragment
-        android:id="@+id/motionLayoutFragment"
-        android:name="cl.svasquezm.sandbox.features.layouts.MotionLayoutFragment"
-        android:label="MotionLayoutFragment" />
+        android:id="@+id/motionLayoutFeaturesFragment"
+        android:name="cl.svasquezm.sandbox.features.MotionLayoutFeaturesFragment"
+        android:label="MotionLayoutFeaturesFragment" >
+        <action
+            android:id="@+id/action_motionLayoutFeaturesFragment_to_motionLayoutFragment2"
+            app:destination="@id/motionLayoutFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/motionLayoutFragment2"
-        android:name="cl.svasquezm.sandbox.features.layouts.MotionLayoutFragment2"
+        android:name="cl.svasquezm.sandbox.features.layouts.motion.MotionLayoutSwipeFragment"
         android:label="MotionLayoutFragment2" />
-    <fragment
-        android:id="@+id/MSLoginFragment"
-        android:name="cl.svasquezm.sandbox.features.auth.MSLoginFragment"
-        android:label="MSLoginFragment" />
-    <fragment
-        android:id="@+id/coroutinesFragment"
-        android:name="cl.svasquezm.sandbox.features.background.CoroutinesFragment"
-        android:label="CoroutinesFragment" />
-    <fragment
-        android:id="@+id/roomFragment"
-        android:name="cl.svasquezm.sandbox.features.room.RoomFragment"
-        android:label="RoomFragment" />
 
 </navigation>

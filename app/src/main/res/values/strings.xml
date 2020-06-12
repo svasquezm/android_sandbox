@@ -13,4 +13,10 @@
     <string name="feature_ui_motion">Motion Layout</string>
     <string name="feature_ui_constraint1_explanation">Simple animation using a RecyclerView and a selected item</string>
     <string name="feature_ui_motion_explanation">Complex animation using a MotionLayout</string>
+    <string name="feature_simple_motion_layout">Simple Motion Layout</string>
+    <string name="feature_simple_motion_layout_explanation">Drag interaction with user</string>
+    <string name="feature_motion_swipe_on_click">Swipe on click</string>
+    <string name="feature_motion_swipe_on_click_explanation">Swipes UI After clicking a Button</string>
+    <string name="feature_motion_flip_on_click_item">Flip after click element</string>
+    <string name="feature_motion_flip_on_click_item_explanation">Flip a view after clicking over an item</string>
 </resources>

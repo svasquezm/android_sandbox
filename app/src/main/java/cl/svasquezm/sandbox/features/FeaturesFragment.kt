@@ -67,17 +67,8 @@ class FeaturesFragment : Fragment() {
         _binding.recyclerView.adapter = FeaturesAdapter(featuresList) { itemClicked ->
             findNavController().run {
                 when(itemClicked){
-                    FeatureType.DATA_BINDING -> navigate(
-                        R.id.action_featuresFragment_to_dataBindingFragment
-                    )
-                    FeatureType.UI -> navigate(
-                        R.id.action_featuresFragment_to_coordinatorLayout1Fragment
-                    )
-                    FeatureType.UI_CONSTRAINT1 -> navigate(
-                        R.id.action_featuresFragment_to_constraintLayoutAnimation1Fragment
-                    )
                     FeatureType.UI_MOTION -> navigate(
-                        R.id.action_featuresFragment_to_motionLayoutFragment
+                        R.id.action_featuresFragment_to_motionLayoutFeaturesFragment
                     )
                 }
             }
@@ -91,7 +82,10 @@ class FeaturesFragment : Fragment() {
         DATA_BINDING(0),
         UI(1),
         UI_CONSTRAINT1(2),
-        UI_MOTION(3)
+        UI_MOTION(3),
+
+        MOTION_SWIPE(30),
+        MOTION_FLIP(31)
     }
 
     /**
@@ -105,7 +99,7 @@ class FeaturesFragment : Fragment() {
     /**
      * Adapter which shows
      */
-    inner class FeaturesAdapter(private val features: List<FeatureDataClass>,
+    class FeaturesAdapter(private val features: List<FeatureDataClass>,
                                 private val onFeatureClicked: (FeatureType) -> Unit) : RecyclerView.Adapter<FeatureViewHolder>(){
 
         override fun getItemCount() = features.size
@@ -118,7 +112,7 @@ class FeaturesFragment : Fragment() {
                 = holder.bind(features[position], onFeatureClicked)
     }
 
-    inner class FeatureViewHolder(view: View) : RecyclerView.ViewHolder(view){
+    class FeatureViewHolder(view: View) : RecyclerView.ViewHolder(view){
         private val title = view.findViewById<TextView>(R.id.title)
         private val description = view.findViewById<TextView>(R.id.description)
 
